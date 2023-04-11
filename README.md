@@ -1,2 +1,2 @@
 # EDD
-Apresentação básica sobre comandos git
+Atividades utilizando python
