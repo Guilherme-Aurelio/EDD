@@ -4,4 +4,4 @@ class Cachorro(Animal): # cria a classe Gato derivada de Animal
         super().__init__(nome, peso, posicao)
     
     def latir(self):
-        print (f"Sou {self.nome}! Au-au...")
+        print (f"Sou {self.nome}! Au-au...");

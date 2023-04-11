@@ -17,4 +17,4 @@ cachorro.moverse()
 cachorro.moverse()
 
 print("Posição do gato: ", gato.posicao)
-print("Posição do cachorro: ", cachorro.posicao)
+print("Posição do cachorro: ", cachorro.posicao);

@@ -25,4 +25,4 @@ class Animal:
         self.__posicao = pos
     
     def moverse(self):
-        self.__posicao += 1
+        self.__posicao += 1;
