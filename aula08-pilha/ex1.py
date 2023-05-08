@@ -1,21 +1,49 @@
 from pilha import Pilha
 
-def ConversaoDecimal(decNumber,base):
+def ConversaoDecimal(dec,base):
     digitos = "0123456789ABCDEF"
 
     pilha = Pilha()
 
-    while decNumber > 0:
-        num = decNumber % base
+    while dec > 0:
+        num = dec % base
         pilha.push(num)
-        decNumber = decNumber // base
+        dec = dec // base
 
-    newString = ""
+    str = ""
     while not pilha.is_empty():
-        newString = newString + digitos[pilha.pop()]
+        str = str + digitos[pilha.pop()]
 
-    return newString
+    return str
 
-print(ConversaoDecimal(256,16))
-print(ConversaoDecimal(25,16))
+pilha = Pilha()
 
+resultado_octal = ConversaoDecimal(256, 8)
+pilha.push(resultado_octal)
+print("Resultado em octal:", resultado_octal)
+
+resultado_hexadecimal = ConversaoDecimal(256, 16)
+pilha.push(resultado_hexadecimal)
+print("Resultado em hexadecimal:", resultado_hexadecimal)
+
+def conversao_para_decimal(num, base):
+    digitos = "0123456789ABCDEF"
+    potencia = 0
+    dec = 0
+    
+    num_str = str(num)
+    
+    for i in range(len(num_str)-1, -1, -1):
+        digito = digitos.index(num_str[i])
+        
+        dec += digito * base**potencia
+        
+        potencia += 1
+    
+    return dec
+
+dec = conversao_para_decimal("1A", 16)
+print(dec)
+
+dec = conversao_para_decimal("32", 8)
+print(dec)
